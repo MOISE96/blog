@@ -1,0 +1,536 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+   background-color: gray;
+}
+/*navbar*/
+
+/*  BURGER MENU
+========================================== */
+.menu {
+    width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 21;
+  right: 1%;
+}
+.menu span {
+position: relative;
+margin-top: 9px;
+margin-bottom: 9px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+position: absolute;
+top: 50%;
+left: 50%;
+margin-left: -15px;
+margin-top: -1.5px;
+}
+.menu span, .menu span::before, .menu span::after {
+display: block;
+
+  width: 26px;
+right: 0;
+height: 3px;
+background-color: #fccb32;
+outline: 1px solid transparent;
+-webkit-transition-property: background-color, -webkit-transform;
+-moz-transition-property: background-color, -moz-transform;
+-o-transition-property: background-color, -o-transform;
+transition-property: background-color, transform;
+-webkit-transition-duration: 0.3s;
+-moz-transition-duration: 0.3s;
+-o-transition-duration: 0.3s;
+transition-duration: 0.3s;
+}
+.menu span::before, .menu span::after {
+position: absolute;
+content: "";
+}
+.menu span::before {
+top: -9px;
+ width:20px
+}
+.menu span::after {
+top: 9px;width: 33px;
+
+}
+.menu.clicked span {
+background-color: transparent;
+}
+.menu.clicked span::before {
+-webkit-transform: translateY(9px) rotate(45deg);
+-moz-transform: translateY(9px) rotate(45deg);
+-ms-transform: translateY(9px) rotate(45deg);
+-o-transform: translateY(9px) rotate(45deg);
+transform: translateY(9px) rotate(45deg);    width: 33px;
+}
+.menu.clicked span::after {
+-webkit-transform: translateY(-9px) rotate(-45deg);
+-moz-transform: translateY(-9px) rotate(-45deg);
+-ms-transform: translateY(-9px) rotate(-45deg);
+-o-transform: translateY(-9px) rotate(-45deg);
+transform: translateY(-9px) rotate(-45deg);
+}
+.menu.clicked span:before, .menu.clicked span:after {
+background-color: #ffffff;
+}
+.menu:hover {
+cursor: pointer;
+}
+/*  NAV
+========================================== */
+
+#nav {
+background: #211316;
+position: fixed;
+z-index: 20;
+top: 0;
+right: 0;
+height: 100%;
+max-width: 250px;
+width: 100%;
+padding: 100px 40px 60px 40px;
+overflow-y: auto;
+-webkit-transform: translateX(100%);
+-moz-transform: translateX(100%);
+-ms-transform: translateX(100%);
+-o-transform: translateX(100%);
+transform: translateX(100%);
+-webkit-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+-moz-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+-o-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+#nav.show {
+-webkit-transform: translateX(0px);
+-moz-transform: translateX(0px);
+-ms-transform: translateX(0px);
+-o-transform: translateX(0px);
+transform: translateX(0px);
+}
+#nav.show ul.main li {
+-webkit-transform: translateX(0px);
+-moz-transform: translateX(0px);
+-ms-transform: translateX(0px);
+-o-transform: translateX(0px);
+transform: translateX(0px);
+opacity: 1;
+}
+.menu.clicked {
+  position: fixed;
+  z-index: 99;
+}
+#nav.show ul.main li:nth-child(1) {
+transition-delay: 0.15s;
+}
+#nav.show ul.main li:nth-child(2) {
+transition-delay: 0.3s;
+}
+#nav.show ul.main li:nth-child(3) {
+transition-delay: 0.45s;
+}
+#nav.show ul.main li:nth-child(4) {
+transition-delay: 0.6s;
+}
+#nav.show ul.main li:nth-child(5) {
+transition-delay: 0.75s;
+}
+#nav.show ul.main li:nth-child(6) {
+transition-delay: 0.9s;
+}
+#nav.show ul.main li:nth-child(7) {
+transition-delay: 1.05s;
+}
+#nav.show ul.main li:nth-child(8) {
+transition-delay: 1.2s;
+}
+#nav.show ul.main li:nth-child(9) {
+transition-delay: 1.35s;
+}
+#nav.show .about, #nav.show .social, #nav.show ul.sub {
+-webkit-transform: translateY(0px);
+-moz-transform: translateY(0px);
+-ms-transform: translateY(0px);
+-o-transform: translateY(0px);
+transform: translateY(0px);
+opacity: 1;
+transition-delay: .85s;
+}
+
+@media (min-width: 667px) {
+#nav {
+padding: 120px 30px 70px 20px;
+}
+}
+#nav ul.main {
+list-style-type: none;
+}
+#nav ul.main li {
+-webkit-transform: translateX(40px);
+-moz-transform: translateX(40px);
+-ms-transform: translateX(40px);
+-o-transform: translateX(40px);
+transform: translateX(40px);
+opacity: 0;
+-webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+transition: all 0.3s ease;
+float: none;
+    list-style: circle;
+  color: #fff
+}
+#nav ul.main li:last-of-type {
+margin-bottom: 0px;
+}
+#nav ul.main li a {
+color: #ffffff;
+
+text-decoration: none;
+text-transform: uppercase;
+font-size: 1rem;
+display: block;
+padding: 10px 0;
+-webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+transition: all 0.3s ease;
+}
+#nav ul.main li a span {
+color: #b7ac7f;
+}
+#nav ul.main li a:hover {
+color: #b7ac7f;
+}
+#nav ul.sub {
+list-style-type: none;
+margin-top: 40px;
+-webkit-transform: translateY(30px);
+-moz-transform: translateY(30px);
+-ms-transform: translateY(30px);
+-o-transform: translateY(30px);
+transform: translateY(30px);
+opacity: 0;
+-webkit-transition: all 0.4s ease;
+-moz-transition: all 0.4s ease;
+-o-transition: all 0.4s ease;
+transition: all 0.4s ease;
+}
+#nav ul.sub li {
+margin-bottom: 10px;
+}
+#nav ul.sub li:last-of-type {
+margin-bottom: 0px;
+}
+#nav ul.sub li a {
+color: #ffffff;
+font-family: "Raleway", sans-serif;
+letter-spacing: 1px;
+font-size: 0.9rem;
+text-decoration: none;
+-webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+transition: all 0.3s ease;
+}
+#nav ul.sub li a:hover {
+color: #b7ac7f;
+}
+.menu:hover span{}
+
+/*  OVERLAY
+========================================== */
+.overlay {
+position: fixed;
+top: 0;
+left: 0;
+z-index: 7;
+width: 100%;
+height: 100%;
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
+background-color: #603e82;
+opacity: 0;
+visibility: hidden;
+}
+.overlay.show {
+opacity: 0.8;
+visibility: visible;
+}
+
+/*slides et articles*/
+.cta-100 {
+  margin-top: 100px;
+  padding-left: 8%;
+  padding-top: 7%;
+}
+.col-md-4{
+    padding-bottom:20px;
+}
+
+.white {
+  color: #fff !important;
+}
+.mt{float: left;margin-top: -20px;padding-top: 20px;}
+.bg-blue-ui {
+  background-color: #708198 !important;
+}
+figure img{width:300px;}
+
+#blogCarousel {
+  padding-bottom: 100px;
+}
+
+.blog .carousel-indicators {
+  left: 0;
+  top: -50px;
+  height: 50%;
+}
+
+
+/* The colour of the indicators */
+
+.blog .carousel-indicators li {
+  background: #708198;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+}
+
+.blog .carousel-indicators .active {
+  background: #0fc9af;
+}
+
+
+
+
+.item-carousel-blog-block {
+  outline: medium none;
+  padding: 15px;
+}
+
+.item-box-blog {
+  border: 1px solid #dadada;
+  text-align: center;
+  z-index: 4;
+  padding: 20px;
+}
+
+.item-box-blog-image {
+  position: relative;
+}
+
+.item-box-blog-image figure img {
+  width: 100%;
+  height: auto;
+}
+
+.item-box-blog-date {
+  position: absolute;
+  z-index: 5;
+  padding: 4px 20px;
+  top: -20px;
+  right: 8px;
+  background-color: #41cb52;
+}
+
+.item-box-blog-date span {
+  color: #fff;
+  display: block;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.item-box-blog-date span.mon {
+  font-size: 18px;
+}
+
+.item-box-blog-date span.day {
+  font-size: 16px;
+}
+
+.item-box-blog-body {
+  padding: 10px;
+}
+
+.item-heading-blog a h5 {
+  margin: 0;
+  line-height: 1;
+  text-decoration:none;
+  transition: color 0.3s;
+}
+
+.item-box-blog-heading a {
+    text-decoration: none;
+    color: yellow;
+}
+
+.item-box-blog-data p {
+  font-size: 13px;
+}
+
+.item-box-blog-data p i {
+  font-size: 12px;
+}
+
+.item-box-blog-text {
+  max-height: 100px;
+  overflow: hidden;
+  color: white;
+}
+
+.mt-10 {
+  float: left;
+  margin-top: -10px;
+  padding-top: 10px;
+}
+
+.btn.bg-blue-ui.white.read {
+  cursor: pointer;
+  padding: 4px 20px;
+  float: left;
+  margin-top: 10px;
+}
+
+.btn.bg-blue-ui.white.read:hover {
+  box-shadow: 0px 5px 15px inset #4d5f77;
+}
+/*footer*/
+
+
+
+.footer1{
+ background-color: black;
+ color: white;
+
+}
+.footer1 h2{
+	margin: 5px;
+	padding: 8px;
+	font-size: 25px;
+	font-family: "Times New Roman", Times, serif;
+
+}
+.footer1 a{
+	color: white;
+}
+.footer1 a:hover{
+	color: ;
+}
+
+.footer1 p{
+	margin: 5px;
+	padding-top: 2px;
+	padding-left: 10px;
+	font-size: 18px;
+	font-family: "Times New Roman", Times, serif;
+
+}
+.footer1 h2{margin: 5px;
+	padding: 5px;
+	border-bottom: 1px solid white;
+
+
+}
+/*==========================footer2===========================*/
+.footer2{
+
+	background-color: #e6e6e6;
+	color: black;
+
+}
+.footer2 p{
+	margin: 8px;
+	padding: 8px;
+	font-size: 16px;
+	font-family: "Times New Roman", Times, serif;
+
+}
+.myframegmap{
+
+    border: 3px solid #f6f5f0;
+    border-radius: 8px;
+    height: 130px;
+    width: 80%;
+    box-shadow: 0px 0px 3px 3px #e7e4dc;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+
+}
+/*menu nav bar*/
+
+/* YOUR CUSTOM STYLES */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+#tori{
+  border-radius: 50px;
+}
+#ic {
+  height: 400px;
+  width: 400px;
+}
+.bb{
+
+  margin-right:10px;
+  height:50px;
+  width: 100px;
+  border-radius: 10px;
+
+}
+.fas fa-shopping-cart{
+height:200px;
+width: 100px;
+}
+.ba{
+  margin-right:20px;
+  height:50px;
+  width: 150px;
+  border-radius: 10px;
+
+}
+.tt{
+  font-family:fantasy;
+  color: yellow;
+  background-color:#1E90FF;
+  border-radius: 50px;
+}
